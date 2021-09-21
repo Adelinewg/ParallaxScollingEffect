@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+       <title>Parallax Scrolling Website</title> 
+       <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Starry Night</a>
+            <u1>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </u1>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Effects</h2>
+            <p> is a technique where the background of a website scrolls at a slower pace than the foreground. 
+                The purpose is to achieve an illusion of depth within the 2d scene of a website. The illusion 
+                has been long adopted into parallax across different mediums, fostering a realistic effect. Its 
+                first use was in traditional animation, dating back to as early as Disney’s Snow White and the 
+                Seven Dwarfs, and in video games such as Super Mario. <br><br>
+                Parallax scrolling websites continue to be a popular trend. It was once recommended that sites 
+                include as much information above the fold as possible in order to avoid the user having to scroll, 
+                but parallax scrolling introduced a way of allowing designers to break away from that by making the 
+                act of scrolling itself engaging for the user. <br><br>Used sparingly, parallax scrolling can add a 
+                subtle element of depth that makes the foreground seem to stand out. In other cases, it can be used 
+                as the main star of the show for a big visual impact. The technique can encourage users to stay on a 
+                page for longer – great for SEO – and to scroll right to the bottom of the content. This website is an 
+                example that shows how Parallax scrolling can be used to different degrees to create distinctive and memorable websites.</p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let mountains_front = document.getElementById('mountains_front');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 6 + 'px';
+                text.style.marginRTop = value * 3 + 'px';
+                btn.style.marginRTop = value * 3 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
